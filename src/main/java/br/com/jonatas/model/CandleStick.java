@@ -15,11 +15,11 @@ public class CandleStick {
     private final double volume;
     private LocalDateTime data;
 
-    public boolean isAlto(){
-        return this.fechamento > this.abertura;
-    }
-
-    public boolean isBaixo(){
-        return this.fechamento < this.abertura;
-    }
+//    public boolean isAlto(){
+//        return this.fechamento > this.abertura;
+//    }
+//
+//    public boolean isBaixo(){
+//        return this.fechamento < this.abertura;
+//    }
 }

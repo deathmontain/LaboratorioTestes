@@ -1,10 +1,13 @@
 package br.com.jonatas.model;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class FactoryCandleTest {
     @Test
@@ -20,6 +23,12 @@ class FactoryCandleTest {
 
         FactoryCandle fabrica = new FactoryCandle();
 
-        CandleStick candle = fabrica.geraCandleParaData(negociacoes, hoje);
+        CandleStick candle = fabrica.geraCandleParaData( negociacoes, hoje);
+
+        Assertions.assertEquals(40.0, candle.getAbertura(), 0.00001);
+        Assertions.assertEquals(20.0, candle.getFechamento(), 0.00001);
+        Assertions.assertEquals(20.0, candle.getMinimo(), 0.00001);
+        Assertions.assertEquals(45.0, candle.getMaximo(), 0.00001);
+        Assertions.assertEquals(14000.0, candle.getVolume(), 0.00001);
     }
 }
