@@ -27,11 +27,11 @@ public class CandleStick {
 
     }
 
-    //    public boolean isAlto(){
-//        return this.fechamento > this.abertura;
-//    }
-//
-//    public boolean isBaixo(){
-//        return this.fechamento < this.abertura;
-//    }
+    public boolean isAlto(){
+        return this.fechamento >= this.abertura;
+    }
+
+    public boolean isBaixo(){
+        return this.fechamento < this.abertura;
+    }
 }
