@@ -1,14 +1,14 @@
-package testes;
+package br.com.jonatas.model;
 
-import br.com.jonatas.model.CandleStick;
-import br.com.jonatas.model.FactoryCandle;
-import br.com.jonatas.model.Negociacao;
+import org.junit.jupiter.api.Test;
+
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
-public class TesteCandleStickFactory {
-    public static void main(String[] args) {
+class FactoryCandleTest {
+    @Test
+    public void sequenciaDeNegociacoesSimples(){
         LocalDateTime hoje = LocalDateTime.now();
 
         Negociacao negociacao = new Negociacao(40.0, 100, hoje);
@@ -21,11 +21,5 @@ public class TesteCandleStickFactory {
         FactoryCandle fabrica = new FactoryCandle();
 
         CandleStick candle = fabrica.geraCandleParaData(negociacoes, hoje);
-
-        System.out.println("Abertura: " + candle.getAbertura());
-        System.out.println("Fechamento: " + candle.getFechamento());
-        System.out.println("Maximo: " + candle.getMaximo());
-        System.out.println("Minimo: " + candle.getMinimo());
-        System.out.println("Total: " + candle.getVolume());
     }
 }
