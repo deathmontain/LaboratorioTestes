@@ -1,11 +1,9 @@
 package br.com.jonatas.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
 @Getter
 public class CandleStick {
     private final double abertura;
@@ -15,7 +13,21 @@ public class CandleStick {
     private final double volume;
     private LocalDateTime data;
 
-//    public boolean isAlto(){
+    public CandleStick(double abertura, double fechamento, double minimo, double maximo, double volume, LocalDateTime data) {
+        this.abertura = abertura;
+        this.fechamento = fechamento;
+        this.minimo = minimo;
+        this.maximo = maximo;
+        this.volume = volume;
+        this.data = data;
+
+        if(maximo < minimo){
+            throw new IllegalArgumentException("Maximo não pode ser maior que o minimo");
+        }
+
+    }
+
+    //    public boolean isAlto(){
 //        return this.fechamento > this.abertura;
 //    }
 //
