@@ -26,6 +26,6 @@ public class CandleStickTest {
         CandleBuilder builder = new CandleBuilder();
         CandleStick candle = builder.comAbertura(30.0).comFechamento(30.0).comMinimo(10.0).comMaximo(50.0)
                 .comVolume(100.0).comData(hoje).geraCandle();
-        Assertions.assertTrue(candle.isAlto()); 
+        Assertions.assertTrue(candle.isAlto());
     }
 }
