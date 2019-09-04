@@ -1,10 +1,11 @@
 package br.com.jonatas.model;
 
-import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@EqualsAndHashCode
 @Getter
 public class Negociacao {
     private final double preco;

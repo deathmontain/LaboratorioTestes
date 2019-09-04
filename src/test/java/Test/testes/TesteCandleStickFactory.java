@@ -1,4 +1,4 @@
-package testes;
+package Test.testes;
 
 import br.com.jonatas.model.CandleStick;
 import br.com.jonatas.model.FactoryCandle;

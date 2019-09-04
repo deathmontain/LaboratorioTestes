@@ -17,6 +17,7 @@ public class LocalDateTimeConverter implements Converter {
 
         writer.startNode("time");
         writer.setValue(String.valueOf(milisSegundo));
+//        writer.setValue(milisSegundo.toString());
         writer.endNode();
 
         writer.startNode("timeZone");
