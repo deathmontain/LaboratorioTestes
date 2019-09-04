@@ -8,11 +8,14 @@ import java.io.InputStream;
 import java.util.List;
 
 public class LeitorXml {
-    public List<Negociacao> carregaXml(InputStream InputStream){
+    public List<Negociacao> carregaXml(InputStream inputStream){
         XStream stream = new XStream(new DomDriver());
-        stream.registerLocalConverter(Negociacao.class, "data", new LocalDateTimeConverter());
         stream.alias("negociacao", Negociacao.class);
-        
-        return (List<Negociacao>) stream.fromXML(InputStream);
+        stream.allowTypesByWildcard(new String[] {
+                "br.com.jonatas.model.**"
+        });
+        stream.registerLocalConverter(Negociacao.class, "data", new LocalDateTimeConverter());
+
+        return (List<Negociacao>) stream.fromXML(inputStream);
     }
 }
