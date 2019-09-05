@@ -22,7 +22,7 @@ public class CandleStick {
         this.data = data;
 
         if(maximo < minimo){
-            throw new IllegalArgumentException("Maximo não pode ser maior que o minimo");
+            throw new IllegalArgumentException("Maximo não pode ser menor que o minimo");
         }
 
     }
