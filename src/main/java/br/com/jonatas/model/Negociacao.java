@@ -34,7 +34,7 @@ public class Negociacao {
         return this.preco * this.quantidade;
     }
 
-    public boolean isMesmoDia(LocalDateTime data) {
-        return this.data.equals(data);
+    public boolean isMesmoDia(LocalDateTime outraData) {
+        return this.data.getDayOfMonth() == outraData.getDayOfMonth();
     }
 }

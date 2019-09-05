@@ -1,6 +1,5 @@
 package br.com.jonatas.model;
 
-import com.sun.org.apache.xpath.internal.operations.Neg;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -32,9 +31,9 @@ public class NegociacaoTest {
     }
 
     @Test
-    public void mesmoSegundoEMesmoDia(){
-        LocalDateTime hoje = LocalDateTime.now();
-        LocalDateTime agora = hoje;
+    public void testaSeEMesmoDia(){
+        LocalDateTime hoje = LocalDateTime.of(2016,04,04, 12, 00);;
+        LocalDateTime agora = LocalDateTime.of(2016,04,04, 02, 00);;
         Negociacao negociacao = new Negociacao(100.0, 20, hoje);
         Assertions.assertTrue(negociacao.isMesmoDia(agora));
     }
