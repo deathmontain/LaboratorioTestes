@@ -35,6 +35,6 @@ public class NegociacaoTest {
         LocalDateTime hoje = LocalDateTime.of(2016,04,04, 12, 00);;
         LocalDateTime agora = LocalDateTime.of(2016,04,04, 02, 00);;
         Negociacao negociacao = new Negociacao(100.0, 20, hoje);
-        Assertions.assertTrue(negociacao.isMesmoDia(agora));
+        Assertions.assertTrue(negociacao.mesmoDia(agora));
     }
 }
