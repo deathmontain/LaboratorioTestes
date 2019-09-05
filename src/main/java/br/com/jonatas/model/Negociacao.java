@@ -36,6 +36,7 @@ public class Negociacao {
 
     public boolean mesmoDia(LocalDateTime outraData) {
         return this.data.getDayOfMonth() == outraData.getDayOfMonth()
-                && data.getMonth() == outraData.getMonth();
+                && data.getMonth() == outraData.getMonth()
+                && data.getYear() == outraData.getYear();
     }
 }
