@@ -33,4 +33,8 @@ public class Negociacao {
     public double getVolume(){
         return this.preco * this.quantidade;
     }
+
+    public boolean isMesmoDia(LocalDateTime data) {
+        return this.data.equals(data);
+    }
 }
