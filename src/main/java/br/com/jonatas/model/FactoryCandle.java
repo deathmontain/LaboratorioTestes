@@ -35,7 +35,7 @@ public class FactoryCandle {
             if(negociacao.mesmoDia(dataAtual)){
                 negociacoesDoDia.add(negociacao);
             } else {
-                CandleStick candleStick =geraCandleParaData(negociacoesDoDia, dataAtual);
+                CandleStick candleStick = geraCandleParaData(negociacoesDoDia, dataAtual);
                 candle.add(candleStick);
                 negociacoesDoDia = new ArrayList<>();
                 dataAtual = negociacao.getData();

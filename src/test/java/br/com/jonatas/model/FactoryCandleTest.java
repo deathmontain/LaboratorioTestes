@@ -73,7 +73,7 @@ class FactoryCandleTest {
         Negociacao negociacao4 = new Negociacao(50.0, 100, amanha);
         Negociacao negociacao5 = new Negociacao(10.0, 20, amanha);
 
-        LocalDateTime depoisDeAmanha = hoje.plusDays(2)
+        LocalDateTime depoisDeAmanha = hoje.plusDays(2);
 
         Negociacao negociacao6 = new Negociacao(35.0, 20, depoisDeAmanha);
         Negociacao negociacao7 = new Negociacao(35.0, 20, depoisDeAmanha);
@@ -85,8 +85,8 @@ class FactoryCandleTest {
         List<CandleStick> candles = fabrica.constroiCandles(negociacoes);
 
         Assertions.assertTrue(negociacoes.get(0).mesmoDia(candles.get(0).getData()));
-        Assertions.assertTrue(negociacoes.get(1).mesmoDia(candles.get(1).getData()));
-        Assertions.assertTrue(negociacoes.get(2).mesmoDia(candles.get(2).getData()));
+        Assertions.assertTrue(negociacoes.get(3).mesmoDia(candles.get(1).getData()));
+        Assertions.assertTrue(negociacoes.get(5).mesmoDia(candles.get(2).getData()));
         Assertions.assertEquals(6000.0, candles.get(0).getVolume(), 0.000001);
         Assertions.assertEquals(50.0, candles.get(0).getMinimo(), 0.000001);
         Assertions.assertEquals(150.0, candles.get(0).getMaximo(), 0.000001);
