@@ -25,4 +25,25 @@ public class FactoryCandle {
 
         return new CandleStick(abertura, fechamento, minimo, maximo, volume, data);
     }
+
+    public List<CandleStick> constroiCandles(List<Negociacao> negociacoes) {
+        List<CandleStick> candle = new ArrayList<>();
+        List<Negociacao> negociacoesDoDia = new ArrayList<>();
+        LocalDateTime dataAtual = negociacoes.get(0).getData();
+
+        for (Negociacao negociacao : negociacoes) {
+            if(negociacao.mesmoDia(dataAtual)){
+                negociacoesDoDia.add(negociacao);
+            } else {
+                CandleStick candleStick =geraCandleParaData(negociacoesDoDia, dataAtual);
+                candle.add(candleStick);
+                negociacoesDoDia = new ArrayList<>();
+                dataAtual = negociacao.getData();
+            }
+        }
+        CandleStick candleStick = geraCandleParaData(negociacoesDoDia, dataAtual);
+        candle.add(candleStick);
+
+        return candle;
+    }
 }
